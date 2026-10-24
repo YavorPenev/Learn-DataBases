@@ -1,0 +1,8 @@
+CREATE TABLE reviews (
+    id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(id) ON DELETE CASCADE,
+    game_id INT REFERENCES games(id) ON DELETE CASCADE,
+    recommended BOOLEAN NOT NULL,
+    body TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
